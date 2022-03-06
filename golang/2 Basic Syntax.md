@@ -67,8 +67,11 @@ x, y := 15, "hello"
 Note: the := operator is only legal inside of functions. Declaring variables at the package level requires the `var` keyword.
 
 
+## Const
+
+`const` can be used to give names to literals, however there is no way in Go to delcare that a variable is immutable.
 
 
-
+[[3 Comma OK Idom]]
 
 
