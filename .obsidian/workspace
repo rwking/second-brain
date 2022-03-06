@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "1 Project Setup.md",
+            "file": "golang/1 Project Setup.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 Project Setup.md",
+                "file": "golang/1 Project Setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
   },
   "active": "5eb0efb2236a4e72",
   "lastOpenFiles": [
-    "1 Project Setup.md",
-    "2 Basic Syntax.md"
+    "golang/1 Project Setup.md",
+    "golang/2 Basic Syntax.md"
   ]
 }
