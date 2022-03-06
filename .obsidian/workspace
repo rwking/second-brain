@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "4cbd7b8f1e0935fd",
+    "type": "split",
+    "children": [
+      {
+        "id": "5eb0efb2236a4e72",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Project Setup.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fa9492f3d6965c02",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0b0c64dbe6de452",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "43817090924009de",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "61fbdd75438a881b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b7ed009555a49048",
+    "type": "split",
+    "children": [
+      {
+        "id": "f08b438c93f0663e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9167a98eda0cd236",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Project Setup.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5eb0efb2236a4e72",
+  "lastOpenFiles": [
+    "Project Setup.md"
+  ]
+}
