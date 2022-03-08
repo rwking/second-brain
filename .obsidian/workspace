@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "golang/4 Maps as Sets.md",
+            "file": "golang/5 Types, Methods, Interfaces.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 257
   },
   "right": {
     "id": "b7ed009555a49048",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "golang/4 Maps as Sets.md",
+                "file": "golang/5 Types, Methods, Interfaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,10 +97,11 @@
   },
   "active": "5eb0efb2236a4e72",
   "lastOpenFiles": [
-    "golang/4 Maps as Sets.md",
-    "golang/Readme.md",
+    "golang/5 Types, Methods, Interfaces.md",
     "golang/1 Project Setup.md",
+    "golang/2 Basic Syntax.md",
     "golang/3 Comma OK Idom.md",
-    "golang/2 Basic Syntax.md"
+    "golang/4 Maps as Sets.md",
+    "golang/Readme.md"
   ]
 }

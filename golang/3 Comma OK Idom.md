@@ -23,4 +23,5 @@ The comma ok idiom in Go lets us distinguish between reading a value and getting
 
 This is also a good practice to implement with user defined types.
 
+Next up:
 [[4 Maps as Sets]]

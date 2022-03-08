@@ -29,8 +29,8 @@ true
 false
 ```
 
-
-
+Next up:
+[[5 Types, Methods, Interfaces]]
 
 
 

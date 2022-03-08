@@ -71,7 +71,7 @@ Note: the := operator is only legal inside of functions. Declaring variables at 
 
 `const` can be used to give names to literals, however there is no way in Go to delcare that a variable is immutable.
 
-
+Next up:
 [[3 Comma OK Idom]]
 
 

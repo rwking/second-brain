@@ -85,5 +85,5 @@ Source:
 _Learning Go: An Idiomatic Approach to Real-Worled Go Programming by Jon Bodner_
 [Link](https://www.oreilly.com/library/view/learning-go/9781492077206/)
 
-
+Next up:
 [[2 Basic Syntax]]
