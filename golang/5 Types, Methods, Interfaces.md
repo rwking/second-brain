@@ -238,30 +238,57 @@ type ReadCloser interface {
 
 ## "Accept interfaces; return structs"
 
-What does this mean? Think back to factory functions - they accept an interface and return a concrete type.
+What does this mean? 
+
+The business logic invoked by your functions should be invoked via interfaces. However, the output of your functions should be concrete types. 
+
+When functions accept interfaces, your code becomes more flexible, and it explicitly declares what functionality is being used. 
+
+When you return interfaces, you lose one main advantage of implicit interfaces: **decoupling.** You want to limit third part interfaces your code depends on because you create a permanent dependency on that module and it's dependencies. 
+
+Another reason to avoid returning interfaces is versioning. If you return concrete types, new methods and fields can be added, but not if you return interfaces. Adding a new method to an interface means updating every implementation; otherwise, your code breaks. This would be a major version change to your code. 
+
+*Note:* You cannot always avoid returning interfaces. Just try not to.
+
+
+## Empty Interfaces Special Usage
+
+In special cases, you may want a variable to store a value of any type. The empty interface enables this functionality:
 
 ```go
-type Person struct {
-  Name string
-  Age int
-}
-
-func NewPerson(name string, age int) Person {
-  return Person{
-    Name: name,
-    Age: age
-  }
-}
-
-// A factory function can also return a pointer
-func NewPerson(name string, age int) *Person {
-  return &Person{
-    Name: name,
-    Age: age
-  }
-}
+var i interface{}
+i = 20
+i = "hello"
+i = struct{
+	FirstName string
+	LastName string
+} {"Rich", "King"}
 ```
 
-The function signature ensures that changes to the interface are enforced when we invoke the interface. For example, if the Person type was modified to include an Address field, our factory function would ensure that we pass the address argument.
+This is explained by the fact that an empty interface type simply states that the variable can store any value whose type implements zero or more methods - this is every type in Go. 
+
+A common use of an empty interface is a data structure with an unknown schema, like a JSON file.
+
+```go
+// one set of braces for the interface{} type,
+// the other to instantiate an instance of the map
+data := map[string]interface{}{}
+contents, err := ioutil.ReadFile("testdata/sample.json") {
+	return err
+}
+defer contents.Close()
+json.Unmarshall(contents, &data)
+// the contetns are now in the map
+```
+
+
+## Type Assertions and Type Switches
+
+A type assertion names the concrete type that implemented the interface, or names another interface that is also implemented by the concrete type underlying the interface. 
+
+```go 
+
+```
+
 
 
