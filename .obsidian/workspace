@@ -60,11 +60,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f08b438c93f0663e",
+        "id": "db790028cd66bb43",
         "type": "tabs",
         "children": [
           {
-            "id": "9167a98eda0cd236",
+            "id": "44cfbe5f14c1cf48",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -76,12 +76,12 @@
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "15b4de72675b2292",
+            "id": "90f322d42b0f9271",
             "type": "leaf",
             "state": {
               "type": "git-view",

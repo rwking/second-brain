@@ -286,7 +286,180 @@ json.Unmarshall(contents, &data)
 
 A type assertion names the concrete type that implemented the interface, or names another interface that is also implemented by the concrete type underlying the interface. 
 
+Remember: Assertion = an expression that encapsulates some testable logic. We are testing that an interface is of a concrete type and revealing that type.
+
 ```go 
+package main
+
+import (
+	"fmt"
+)
+
+type MyInt int
+
+func main() {
+	var i interface{}
+	var mine MyInt = 20
+	i = mine
+	i2 := i.(MyInt)
+	fmt.Println(i2)
+}
+```
+
+```console
+20  
+
+Program exited.
+```
+
+When a type assertion fails, the code will panic. 
+
+```go 
+type MyInt int
+
+func main() {
+	var i interface{}
+	var mine MyInt = 20
+	i = mine
+	i2 := i.(MyInt)
+	fmt.Println(i2)
+}
+```
+
+And the panic we get is:
+
+```console
+panic: interface conversion: interface {} is main.MyInt, not string
+```
+
+To avoid a crash, we can use the comma ok idiom.
+
+```go
+type MyInt int
+
+func main() {
+	var i interface{}
+	var mine MyInt = 20
+	i = mine
+	i2, ok := i.(string)
+	if !ok {
+		fmt.Println("Look, some sh*t just went down...")
+	}
+	fmt.Println(i2)
+}
+```
+
+Always use the comma Ok idiom, regardless of how confident you are in your type assertion. 
+
+When an interface could be one of many possible types, we use a type switch. Type switches resemble normal *switch* statements. However, instead of a boolean operation, we supply a variable of interface type and follow it with `.(type)`. 
+
+The purpose of a switch is to derive a new variable from an existing one, so we should shadow the variable. **Note:** this is one of the very few places where shadowing is ok. In this example, we aren't shadowing because the comments would be difficult to read.
+
+```go
+func doStuff(i interface{}) {
+	switch j := i.(type) {
+		case nil:
+			// i is nil; type of j is interface()
+		case int:
+			// j is of type int
+		case MyInt:
+			// j is of type MyInt
+		case io.Reader:
+			// j is of type io.Reader
+		case string:
+			// j is a string
+		case bool, rune:
+			// i is either a bool or rune, so j is of type interface{}
+		default:
+			// no idea what i is, so j is of type interface{}
+	}
+}
+``` 
+
+
+This is another example of a feature that we're given, but told to use sparingly. 🤣  
+But I digress...
+
+## Function Types are a Bridge to Interfaces
+Go allows methods on any user-defined type, including user-defined function types; think, Handlers. They allow functions to implement interfaces. The most common usage is an HTTP handler. The handler processes an HTTP server request and is defined by an interface.
+
+```go
+type Handler interface{
+	ServeHTTP(http.ResponseWriter, *http.Request)
+} 
+```
+
+We can then use type conversion to enable any function that has the signature `func(htt.ResponseWriter, *http.Request)` to be used as an http.Handler. 
+
+```go 
+type HandlerFunc func(http.ResponseWRiter, *http.Request)
+
+func (f HandlerFunc) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	f(w, r)
+}
+```
+
+This lets you implement HTTP handlers using functions, methods, or closures using the exact same code path as the one used for other types that meet the http.Handler interface.
+
+Recall that functions in Go are first-class concepts (can be passed as a parameter into another function). The question becomes: when should your function or method specify an input parameter of a function type, and when should you just implement an interface?
+
+If a function is likely to depend on many other functions or other state not specified in its input parameters, use an interface parameter and define a function type to bridge a function to the interface. This is the handler example. However, if it's a simple function like sort.Slice, then a parameter of a function is the best choice.
+
+## Implicit Interfaces Make Dependency Injection Easier
+Dependency injection eases the burden of decoupling. Recall that dependency injection is when an injector instructs the client what service it will use by injecting (providing) that service, typically as parameters. 
+
+Go's implicit interfaces facilitate dependency injection. 
+
+```go
+package main
+
+import(
+	"fmt"
+)
+
+// Logger
+func LogOutput(message string) {
+	fmt.Println(message)
+}
+
+// Data store
+type SimpleDataStore struct {
+	userData map[string]string
+}
+
+func (sds SimpleDataStore) UserNameForID(userID string) (string, bool) {
+	name, ok := sds.UserData[userID]
+	return name, ok
+}
+
+// Factory function to create an instance of the SDS
+func NewSimpleDataStore() SimpleDataStore {
+	return SimpleDataStore{
+		userData: map[string]string{
+			"1": "Fred",
+			"2": "Mary",
+			"3": "Path",
+		}
+	}
+}
+
+// Interfaces to describe business logic dependencies
+type DataStore interface{
+	UserNameForID(userID string) (string, bool)
+}
+
+type Logger interface{
+	Log(message string)
+}
+
+// Make the LogOutput method meet the interface
+type LoggerAdapter func(message string)
+
+func(lg LoggerAdapter) Log(message string) {
+	lg(message)
+}
+
+
 
 ```
 
