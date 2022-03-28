@@ -459,8 +459,28 @@ func(lg LoggerAdapter) Log(message string) {
 	lg(message)
 }
 
+// Implement the business logic
+type SimpleLogic struct {
+	l Logger
+	ds DataStore
+}
 
-
+func (sl SimpleLogic) SayHello(userID string) (string, error) {
+	sl.l.Log("in SayHello for + userID)
+	name, ok : = sl.ds.UserNameForID(userID)
+	if !ok {
+		return "", errors.New("unknown user")
+	}
+	return "Hello, " + name, nil
+}
+			 
+func (sl SimpleLogic) SayGoodbye(userID string) (string, error) (
+	sl.l.Log("in SayGoodbye for " + userID)
+	name, ok := sl.ds.UserNameForID(userID)
+	if !ok {
+	return "", errors.New("unknown user")
+	}
+	return "Goodbye, " + name, mil
 ```
 
 

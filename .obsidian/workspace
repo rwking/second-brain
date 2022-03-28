@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "4cbd7b8f1e0935fd",
+    "id": "7e8b09ed2d3e6ac9",
     "type": "split",
     "children": [
       {
-        "id": "5eb0efb2236a4e72",
+        "id": "68f2f834e81867fc",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fa9492f3d6965c02",
+    "id": "088c28f0e5d7e8c8",
     "type": "split",
     "children": [
       {
-        "id": "a0b0c64dbe6de452",
+        "id": "dc2255bff38fe37a",
         "type": "tabs",
         "children": [
           {
-            "id": "43817090924009de",
+            "id": "794f1493b168b46b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,7 +35,7 @@
             }
           },
           {
-            "id": "61fbdd75438a881b",
+            "id": "af2f527eae5b9068",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -53,18 +53,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257
+    "width": 300
   },
   "right": {
-    "id": "b7ed009555a49048",
+    "id": "f59f545681b2f1ea",
     "type": "split",
     "children": [
       {
-        "id": "db790028cd66bb43",
+        "id": "aa790bd34338577b",
         "type": "tabs",
         "children": [
           {
-            "id": "44cfbe5f14c1cf48",
+            "id": "99eee4e39988d020",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -81,7 +81,7 @@
             }
           },
           {
-            "id": "90f322d42b0f9271",
+            "id": "dd09ee8299991e91",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -95,13 +95,8 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "5eb0efb2236a4e72",
+  "active": "68f2f834e81867fc",
   "lastOpenFiles": [
-    "golang/5 Types, Methods, Interfaces.md",
-    "golang/1 Project Setup.md",
-    "golang/2 Basic Syntax.md",
-    "golang/3 Comma OK Idom.md",
-    "golang/4 Maps as Sets.md",
-    "golang/Readme.md"
+    "golang/5 Types, Methods, Interfaces.md"
   ]
 }

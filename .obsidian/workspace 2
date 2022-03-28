@@ -1,0 +1,74 @@
+{
+  "main": {
+    "id": "7e8b09ed2d3e6ac9",
+    "type": "split",
+    "children": [
+      {
+        "id": "68f2f834e81867fc",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "62f7e695b4af3555",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f8344b89c1ccf4ee",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {}
+        }
+      },
+      {
+        "id": "c73d6c232dd67c9a",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "dc204300732bc4ef",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "11f34a467e2c1545",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "68f2f834e81867fc",
+  "lastOpenFiles": [
+    "golang/5 Types, Methods, Interfaces.md"
+  ]
+}
